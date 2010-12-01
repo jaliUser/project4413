@@ -5,7 +5,7 @@
 	xmlns:x="http://java.sun.com/jsp/jstl/xml"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" 
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
-	version="2.0">
+version="2.0">
     
     <jsp:directive.page language="java"
         contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" />
@@ -16,26 +16,27 @@
         <![CDATA[ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> ]]>
     </jsp:text>
 
-
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>EBooking Home</title>
+<title>Login</title>
 </head>
 <body>
+<h1> This is the Login page</h1>
 
-<h1>Welcome to EBooking Home Page</h1>
+<p style="color:blue; font-weight: bold;">Enter your username and password below: </p>
+<br/>
+<form method ="POST" action="main.do?login=go">
+	<p>
+	<table border="0">
+		<tr><th></th><th></th></tr>
+		<tr><td>Username: </td><td> <input type="text" size="15" maxlength="15" name="userName" value=""/></td></tr>
+		<tr><td>Password: </td><td> <input type="password" size="15" maxlength="15"  name="userPassword"/></td></tr>	
+				
+	</table>
+	</p>
+	<input type="submit" name="loginBtn" value="Login"/>
 
-<p>Please login below to initiate the booking process:</p>
-
-
-
-<!-- <c:redirect url="/login.do?q=true"> <input type="submit" name="loginPage" value="LoginUsingC"/> </c:redirect> -->
-
-<form method="post" action="login.do?q=login">
-
-<input type="submit" name="loginPage" value="Login"/>
 </form>
 
 </body>
