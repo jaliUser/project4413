@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<jsp:root 
-	xmlns:jsp="http://java.sun.com/JSP/Page" 
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" 
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:x="http://java.sun.com/jsp/jstl/xml"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" 
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	version="2.0">
-    
     <jsp:directive.page language="java"
         contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" />
     <jsp:text>
@@ -15,28 +13,31 @@
     <jsp:text>
         <![CDATA[ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> ]]>
     </jsp:text>
-
-
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>EBooking Home</title>
+<title>Book ${resource.name}</title>
+
+<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAASHWR0rLTWegzN340588DmhQhV87ySJq-9Jf-n_MMkN7QAVPjihSAnv4K6oNQSvIS9nE7luC3DRrkoQ" ></script>
+    <script type="text/javascript">
+    //<![CDATA[
+
+    google.setOnLoadCallback(getMyFeed);
+    google.load("gdata", "1");
+
+    function getMyFeed() {
+      // Fill out
+    }
+
+    //]]>
+    </script>
+
+
 </head>
+
 <body>
-
-<h1>Welcome to EBooking Home Page</h1>
-
-<p>Please login below to initiate the booking process:</p>
-
-
-
-<!-- <c:redirect url="/login.do?q=true"> <input type="submit" name="loginPage" value="LoginUsingC"/> </c:redirect> -->
-
-<form method="post" action="login.do?q=login">
-
-<input type="submit" name="loginPage" value="Login"/>
-</form>
+	<h2>Resource name = ${resource.name}</h2>
+	<img src="img/logo-Google.gif" style="position: absolute; top=-1000px"/>
 
 </body>
 </html>
