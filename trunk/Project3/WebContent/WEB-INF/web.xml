@@ -29,4 +29,29 @@
     <url-pattern>/index.html</url-pattern>
   </servlet-mapping>
   -->
+  
+  <!--
+  Define the Members-only area, by defining
+  a "Security Constraint" on this Application, and
+  mapping it to the subdirectory (URL) that we want
+  to restrict.
+ -->
+<security-constraint>
+  <web-resource-collection>
+    <web-resource-name>Entire Application</web-resource-name>
+    <url-pattern>*.do</url-pattern>
+  </web-resource-collection>
+  <auth-constraint>
+      <role-name>admin</role-name>
+      <role-name>user</role-name>
+  </auth-constraint>
+</security-constraint>
+<!-- Define the Login Configuration for this Application -->
+<login-config>
+  <auth-method>BASIC</auth-method>
+  <realm-name>Authenticated users-only area</realm-name>
+</login-config>
+
+  
+  
 </web-app>
