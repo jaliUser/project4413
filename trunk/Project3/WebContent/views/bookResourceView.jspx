@@ -37,7 +37,12 @@
 
 <body>
 	<h2>Resource name = ${resource.name}</h2>
-	<img src="img/logo-Google.gif" style="position: absolute; top=-1000px"/>
+	<!-- <img src="img/logo-Google.gif" style="position: absolute; top=-1000px"/> -->
+
+	<form method="post" action="home.do">
+		<input type="submit" name="home" value="Back to home"/>
+	
+	</form>
 
 </body>
 </html>
