@@ -14,35 +14,48 @@
         <![CDATA[ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> ]]>
     </jsp:text>
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Book ${resource.name}</title>
-
-<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAASHWR0rLTWegzN340588DmhQhV87ySJq-9Jf-n_MMkN7QAVPjihSAnv4K6oNQSvIS9nE7luC3DRrkoQ" ></script>
-    <script type="text/javascript">
-    //<![CDATA[
-
-    google.setOnLoadCallback(getMyFeed);
-    google.load("gdata", "1");
-
-    function getMyFeed() {
-      // Fill out
-    }
-
-    //]]>
-    </script>
+<script type="text/javascript">
+function changeURL(url, id){
+	//alert(id);
+	var newURL=url;
+	document.getElementById(id).src=newURL;
+	}
+</script>
+<title>eBook</title>
 
 
 </head>
 
 <body>
-	<h2>Resource name = ${resource.name}</h2>
-	<!-- <img src="img/logo-Google.gif" style="position: absolute; top=-1000px"/> -->
 
-	<form method="post" action="home.do">
-		<input type="submit" name="home" value="Back to home"/>
+<table width="100%" align="left" border="1">
+	<tr>
+		<th colspan="2" >Man, I'm so wide!</th>
+	</tr>
 	
-	</form>
+	<tr>
+		<td height="20%"><a href="#" onclick="changeURL('calender/Room1.jspx', 'myFrame');">Room 1</a></td>
+		<td rowspan="6" height="80%" > <iframe id="myFrame" src="calender/Room1.jspx" frameborder="0" width="100%" height="100%" >Hello</iframe></td>
+	</tr>
+	<tr>
+		<td><a href="#" onclick="changeURL('views/Rooms/Room2.jspx', 'myFrame');">Room 2</a></td>	
+	</tr>
+	<tr>
+		<td><a href="#" onclick="changeURL('views/Rooms/Room3.jspx', 'myFrame');">Room 3</a></td>	
+	</tr>
+	<tr> 
+		<td><a href="#" onclick="changeURL('views/Rooms/Room4.jspx', 'myFrame');">Room 4</a></td>
+	</tr>
+	<tr>
+		<td><a href="#" onclick="changeURL('views/Rooms/Room5.jspx', 'myFrame');">Room 5</a></td>	
+	</tr>
+	<tr>
+		<td><a href="#" onclick="changeURL('views/Rooms/Room6.jspx', 'myFrame');">Room 6</a></td>
+	</tr>
+</table>
+
 
 </body>
 </html>
