@@ -16,12 +16,38 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
+<style type="text/css">
+
+body{font-family:arial;}
+table{font-size:80%;background:white}
+a.one{color:white;text-decoration:none}
+a.one:hover{color:#C0C0C0}
+a.two{color:blue;text-decoration:none}
+a.two:hover{color:red}
+td.menu{background:#5286BD}
+table.menu
+{
+font-size:100%;
+position:absolute;
+visibility:hidden;
+}
+</style>
 <script type="text/javascript">
-function changeURL(url, id){
+function changeURL(url, id)
+{
 	//alert(id);
 	var newURL=url;
 	document.getElementById(id).src=newURL;
-	}
+}
+function showmenu(elmnt)
+{
+document.getElementById(elmnt).style.visibility="visible";
+
+}
+function hidemenu(elmnt)
+{
+document.getElementById(elmnt).style.visibility="hidden";
+}
 </script>
 <title>eBook</title>
 
@@ -30,14 +56,15 @@ function changeURL(url, id){
 
 <body>
 
-<table width="100%" align="left" border="1">
+<!--<table width="100%" height="800pt" align="center" border="1">
 	<tr>
-		<th colspan="2" >Man, I'm so wide!</th>
+		
+		<th colspan="2" > Man, I'm so wide!</th>
 	</tr>
 	
 	<tr>
-		<td height="20%"><a href="#" onclick="changeURL('calender/Room1.jspx', 'myFrame');">Room 1</a></td>
-		<td rowspan="6" height="80%" > <iframe id="myFrame" src="calender/Room1.jspx" frameborder="0" width="100%" height="100%" >Hello</iframe></td>
+		<td height="20%"><a href="#" onclick="changeURL('views/Rooms/Room1.jspx', 'myFrame');">Room 1</a></td>
+		<td rowspan="100" height="80%" > <iframe id="myFrame" src="calender/Calender.html" frameborder="0" width="100%" height="100%" align="middle" >Hello</iframe></td>
 	</tr>
 	<tr>
 		<td><a href="#" onclick="changeURL('views/Rooms/Room2.jspx', 'myFrame');">Room 2</a></td>	
@@ -56,6 +83,35 @@ function changeURL(url, id){
 	</tr>
 </table>
 
+-->
+<table align="center" frame="box" style="table-layout:fixed;"  cellpadding="2" width="100%" >
+<tr style="font-family:Arial; font-size:13px; font-weight:bold;" bgcolor="#5286BD">
+	
+	<td bgcolor="#005387" align="center" >
+	<a href="main.do" target="_top" class="one" >Home</a>
+	</td>
+	
+	<!--<td ><div align="center"><a href="#" onclick="changeURL('calender/Calender.html', 'myFrame');" class="one">Calender<br /></a></div></td> -->
+	
+	<td onmouseover="showmenu('resourceMenu')" onmouseout="hidemenu('resourceMenu')">
+		<div align="center"><a href="#"  target="_top" class="one">Resource<br /></a></div>
+		
+		<table class="menu" id="resourceMenu" width="100%" style="text-decoration:none; font:bold">
+		<c:forEach var="r" items="${resources}">
+			<tr><td align="center" class="menu"><a href="#" onclick="changeURL('main.do?res=${r.resourceName}', 'myFrame');" class="one">${r.resourceName}</a></td></tr> 
+			<!-- <tr><td align="center" class="menu"><a href="#" onclick="changeURL('main.do?q=showResource&amp;res=${r.resourceName}$amp;rid=${r.resourceID}', 'myFrame');" class="one">${r.resourceName}</a></td></tr> -->
+		</c:forEach>
+		
+		</table>
+	</td>
+	
+	<td ><div align="center"><a href="#" onclick="changeURL('views/Book.jspx', 'myFrame');" class="one">Book a Room<br /></a></div></td>
+</tr>
+<tr>
+		<!--<td  colspan="3" height="800pt"> <iframe id="myFrame" src="calender/Calender.html" frameborder="0" width="100%" height="100%" align="middle" >Hello</iframe></td>-->
+	<td  colspan="3" height="800pt"> <iframe id="myFrame" src="main.do?q=viewUsers" frameborder="0" width="100%" height="100%" align="middle" >Hello</iframe></td>
+</tr>
+</table>
 
 </body>
 </html>

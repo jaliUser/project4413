@@ -90,6 +90,22 @@ public class IterativeBookings {
     protected List<Bookings> bookings;
     
 
+   public IterativeBookings()
+   {
+	   super();
+   }
+   public IterativeBookings(int ibid, XMLGregorianCalendar startDate, XMLGregorianCalendar endDate, XMLGregorianCalendar startTime,
+		   BigDecimal duration, String frequency)
+   {
+	   this.iterativeBookingsID = ibid;
+	   this.startDate = startDate;
+	   this.endDate = endDate;
+	   this.startTime = startTime;
+	   this.duration = duration;
+	   this.frequency = frequency;
+	   
+   }
+   
     /**
      * Gets the value of the iterativeBookingsID property.
      * 
