@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<jsp:root  
+	xmlns:jsp="http://java.sun.com/JSP/Page" 
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:x="http://java.sun.com/jsp/jstl/xml"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" 
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	version="2.0">
+    <jsp:directive.page language="java"
+        contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" />
+    <jsp:text>
+        <![CDATA[ <?xml version="1.0" encoding="ISO-8859-1" ?> ]]>
+    </jsp:text>
+    <jsp:text>
+        <![CDATA[ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> ]]>
+    </jsp:text>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style type="text/css">
+td.border 
+{
+border-width: 5px;
+border-color: #000080;
+border-style: solid;
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+
+<title>Insert title here</title>
+</head>
+<body>
+Hello I'm ${Room}!!<br/>
+the Date chosen is = ${Date}<br/>
+
+<a href="calender/Calender.html"><p>Pick a different date.</p></a>
+<table  width="40%"   cellpadding="1" align="left" frame="box">
+
+	<tr bgcolor="gray">
+		<th>Time</th>
+		<th>${Date}</th>
+		<th >User Name</th>
+	</tr>
+	
+<c:forEach var="i" begin="0" end="23" step="1" varStatus ="status">
+	<tr>
+		<td rowspan="2" width="15%" height="12pt" id="${i}" bgcolor="LightGray">${i}:00</td>
+      
+		<td  width="60%" height="6pt" bgcolor="PowderBlue" id="${i}:00">  </td>
+		<td  width="25%" height="6pt" bgcolor="LightGray"> </td>
+	</tr>
+	<tr>
+		<td  width="60%" height="6pt" id="${i}:30">  </td>
+		<td  width="25%" height="6pt" bgcolor="LightGray"> </td>
+	</tr>
+</c:forEach>
+
+</table>
+<h2>Please Provide Event Information.</h2>
+<form name="main" action="main.do?booking=true">
+<table frame="border">
+<tr>
+	<td>Event Title</td><td><input name="title" type="text" size="27"></input></td>
+</tr>
+<tr>
+	<td>Event Description</td><td><textarea rows="3" cols="20">&#160;</textarea></td>
+</tr>
+<tr>
+	<td>Start Time</td><td><input type="text" size="10" maxlength="10"/>HH:MM</td>
+</tr>
+
+<tr>
+	<td>Duration</td><td><input type="text" size="10" maxlength="10" value="0.5"/>Minimum Half-hour 0.5</td>
+</tr>
+</table>
+<table frame="border">
+
+</table>
+<input type="submit" vaule="Book"/>
+</form>
+
+
+
+</body>
+</html>
+</jsp:root>

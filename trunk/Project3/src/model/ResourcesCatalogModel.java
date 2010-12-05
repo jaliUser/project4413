@@ -41,10 +41,10 @@ public class ResourcesCatalogModel
 		//String rCatalogFilePath = catalogFile + System.getProperty("file.separator") + "ResourceCatalog.xml";
 		Dataroot data = (Dataroot)unmarshaller.unmarshal(new File(catalogFile));
 		
-		resources = new TreeMap<Integer, Resources>(new ResourcesComparator());
-		bookings = new TreeMap<Integer, Bookings> (new BookingsComparator());
-		users = new TreeMap <Integer, Users>(new UsersComparator());
-		iterativeBookings = new TreeMap<Integer, IterativeBookings>(new IterativeBookingsComparator());
+		resources = new TreeMap<Integer, Resources>();
+		bookings = new TreeMap<Integer, Bookings> ();
+		users = new TreeMap <Integer, Users>();
+		iterativeBookings = new TreeMap<Integer, IterativeBookings>();
 		
 		resourceIDtoBookings = new TreeMap<Integer, List<Bookings>>();
 		userIDtoBookings = new TreeMap<Integer, List<Bookings>>();;
@@ -63,11 +63,34 @@ public class ResourcesCatalogModel
 	}		
 	
 	//the most important method, add a booking and update all proper references to Entities
-	protected synchronized void addBooking()
+	public synchronized void addBooking()
 	{
 		//generate unique number for bookingID
 	}
-	
+	public Map<Integer, Bookings> getBookings()
+	{
+		return bookings;
+	}
+	public Map<Integer, Users> getUsers()
+	{
+		return users;
+	}
+	public Map<Integer, Resources> getResources()
+	{
+		return resources;
+	}
+	public Map<Integer, List<Bookings> > getUIDtoBookings()
+	{
+		return userIDtoBookings;
+	}
+	public Map<Integer, List<Bookings> > getRIDtoBookings()
+	{
+		return resourceIDtoBookings;
+	}
+	public Map<Integer, List<Bookings> > getIBIDtoBookings()
+	{
+		return iterativeBookingsIDtoBookings;
+	}
 	private void populateBookingsMap(List<Bookings> allBookings) 
 	{
 		//create a hashmap that links the resources, users and iterativeBookings to Bookings.
@@ -139,13 +162,14 @@ public class ResourcesCatalogModel
 			
 		}	
 	}
-	private void loadResourcesMap(List<Resources> resources) {
+	private void loadResourcesMap(List<Resources> resourcesList) {
 		
-		Iterator<Resources> rItr = resources.iterator();
+		Iterator<Resources> rItr = resourcesList.iterator();
 		while(rItr.hasNext())
 		{
 			Resources r = rItr.next();
-			ResourcesCatalogModel.resources.put(r.getResourceID(), r);		
+			int rid = r.getResourceID();
+			ResourcesCatalogModel.resources.put(rid, r);		
 		}	
 	}
 	private void loadUsersMap(List<Users> users2) {

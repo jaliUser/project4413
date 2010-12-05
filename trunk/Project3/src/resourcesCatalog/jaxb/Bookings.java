@@ -111,9 +111,26 @@ public class Bookings {
 //    protected List<IterativeBookings> iterativeBookings;
 
     
+    public Bookings()
+    {
+    	super();
+    }
     
+    public Bookings(int bid, String bName, String bDesc, int uid, int rid, XMLGregorianCalendar cal, boolean isItr,
+    		XMLGregorianCalendar startTime, BigDecimal duration)
+    {
+    	this.bookingID = bid;
+    	this.bookingName = bName;
+    	this.bookingDescription = bDesc;
+    	this.userID = uid;
+    	this.resourceID = rid;
+    	this.bookingDate = cal;
+    	this.isIterative = isItr;
+    	this.startTime = startTime;
+    	this.duration = duration;
+    }
     
-    
+ 
     
     /**
      * Gets the value of the bookingID property.
