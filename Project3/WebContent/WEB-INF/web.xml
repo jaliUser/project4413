@@ -15,6 +15,11 @@
     <display-name>Front</display-name>
     <servlet-name>Front</servlet-name>
     <servlet-class>ctrl.Front</servlet-class>
+    <init-param>
+    	<param-name>ResourcesCatalog</param-name>
+    	<param-value>/WEB-INF/ResourcesCatalogFinal.xml</param-value>
+    </init-param>
+    
   </servlet>
   <servlet-mapping>
     <servlet-name>Front</servlet-name>

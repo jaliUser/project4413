@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="ResourcesCatalog4.xsd" generated="2010-12-04T22:20:23">
+<Resources>
+<ResourceID>1</ResourceID>
+<ResourceName>CSE3033</ResourceName>
+<Description>The conference room in CSE 3rd floor.</Description>
+<Bookings>
+<BookingID>123</BookingID>
+<BookingName>CSE4413 study group</BookingName>
+<BookingDescription>Study for CSE4413 project</BookingDescription>
+<UserID>3</UserID>
+<ResourceID>1</ResourceID>
+<BookingDate>2010-12-04T00:00:00</BookingDate>
+<IsIterative>0</IsIterative>
+</Bookings>
+</Resources>
+<Resources>
+<ResourceID>2</ResourceID>
+<ResourceName>CB120</ResourceName>
+<Description>Lecture Hall 120, Chemistry Building</Description>
+<Bookings>
+<BookingID>4</BookingID>
+<BookingName>CSE1020</BookingName>
+<BookingDescription>Java 101 session with first year peeps.</BookingDescription>
+<UserID>2</UserID>
+<ResourceID>2</ResourceID>
+<BookingDate>2010-12-05T00:00:00</BookingDate>
+<IsIterative>0</IsIterative>
+</Bookings>
+</Resources>
+<Resources>
+<ResourceID>3</ResourceID>
+<ResourceName>VH303</ResourceName>
+<Description>Lecture Hall 303, Vari Hall</Description>
+</Resources>
+<Resources>
+<ResourceID>4</ResourceID>
+<ResourceName>Steacie102</ResourceName>
+<Description>Steacie Library 102</Description>
+<Bookings>
+<BookingID>1</BookingID>
+<BookingName>Steacie102</BookingName>
+<BookingDescription>Raeid&apos;s booking</BookingDescription>
+<UserID>1</UserID>
+<ResourceID>4</ResourceID>
+<IterativeBookingsID>1</IterativeBookingsID>
+<BookingDate>2010-12-06T00:00:00</BookingDate>
+<IsIterative>1</IsIterative>
+<StartTime>2010-12-04T00:00:00</StartTime>
+<IterativeBookings>
+<IterativeBookingsID>1</IterativeBookingsID>
+<StartDate>2010-12-04T00:00:00</StartDate>
+<EndDate>2011-04-02T00:00:00</EndDate>
+<Duration>2</Duration>
+<Frequency>Every Week</Frequency>
+</IterativeBookings>
+</Bookings>
+</Resources>
+<Users>
+<UserID>1</UserID>
+<IsAdmin>1</IsAdmin>
+<LastName>Saqur</LastName>
+<FirstName>Raeid</FirstName>
+<Phone>6478684246</Phone>
+<Address>556 Sentinel Rd, North York, ON-M3J3R9, Canada</Address>
+<Email>raeidsaqur@gmail.com</Email>
+</Users>
+<Users>
+<UserID>2</UserID>
+<IsAdmin>1</IsAdmin>
+<LastName>Panos</LastName>
+<FirstName>Shant</FirstName>
+<Phone>6478952319</Phone>
+<Address>120 Richgroove Dr., Etobicoke, ON-M9R03A</Address>
+<Email>shantpanos@me.com</Email>
+</Users>
+<Users>
+<UserID>3</UserID>
+<IsAdmin>0</IsAdmin>
+<LastName>Mahmud</LastName>
+<FirstName>Usman</FirstName>
+<Phone>6478884246</Phone>
+<Address>10E Passy Crescent Dr, York University, ON-M3J1P3</Address>
+<Email>usman@usman.net</Email>
+</Users>
+<Users>
+<UserID>4</UserID>
+<IsAdmin>0</IsAdmin>
+<LastName>Bar</LastName>
+<FirstName>Or</FirstName>
+<Phone>4162802236</Phone>
+<Address>Vanier Residence, York University, ON-M3J1P3, Canada</Address>
+<Email>or.bar@gmail.com</Email>
+</Users>
+
+<Bookings>
+<BookingID>123</BookingID>
+<BookingName>CSE4413 study group</BookingName>
+<BookingDescription>Study for CSE4413 project</BookingDescription>
+<UserID>3</UserID>
+<ResourceID>1</ResourceID>
+<BookingDate>2010-12-04T00:00:00</BookingDate>
+<IsIterative>0</IsIterative>
+<StartTime>07:00:00</StartTime>
+<Duration>2.5</Duration>
+</Bookings>
+
+
+<Bookings>
+<BookingID>4</BookingID>
+<BookingName>CSE1020</BookingName>
+<BookingDescription>Java 101 session with first year peeps.</BookingDescription>
+<UserID>2</UserID>
+<ResourceID>2</ResourceID>
+<BookingDate>2010-12-05T00:00:00</BookingDate>
+<IsIterative>0</IsIterative>
+<StartTime>05:00:00</StartTime>
+<Duration>0.5</Duration>
+</Bookings>
+
+<Bookings>
+<BookingID>1</BookingID>
+<BookingName>Steacie102</BookingName>
+<BookingDescription>Raeid&apos;s booking</BookingDescription>
+<UserID>1</UserID>
+<ResourceID>4</ResourceID>
+<IterativeBookingsID>1</IterativeBookingsID>
+<BookingDate>2010-12-06T00:00:00</BookingDate>
+<IsIterative>1</IsIterative>
+<StartTime>02:00:00</StartTime>
+<Duration>3</Duration>
+</Bookings>
+
+<IterativeBookings>
+<IterativeBookingsID>1</IterativeBookingsID>
+<StartDate>2010-12-04T00:00:00</StartDate>
+<EndDate>2011-04-02T00:00:00</EndDate>
+<StartTime>02:00:00</StartTime>
+<Duration>3</Duration>
+<Frequency>Every Week</Frequency>
+</IterativeBookings>
+
+</dataroot>

@@ -1,5 +1,6 @@
 package ctrl;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -9,8 +10,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.bind.JAXBException;
 
-import beans.Resource;
+import model.ResourcesCatalogModel;
+
+
 
 /**
  * Servlet implementation class Front
@@ -29,9 +33,28 @@ public class Front extends HttpServlet {
     @Override
 	public void init() throws ServletException
 	{
-		//do nothing for now..
-    	Resource rsrc = new Resource("CSE30333");
-    	this.getServletContext().setAttribute("rsrc", rsrc);
+		String rCatalogFile = this.getServletConfig().getInitParameter("ResourcesCatalog");
+    	String realRCatalogFilePath = this.getServletContext().getRealPath(rCatalogFile);
+    	
+    	System.out.println(realRCatalogFilePath);  //TODO: use System.getProperty("file.separator");
+    	
+    	try {
+			ResourcesCatalogModel model = new ResourcesCatalogModel(realRCatalogFilePath);
+			this.getServletContext().setAttribute("model", model);
+		} catch (JAXBException e) {
+			// TODO Auto-generated catch block
+			System.err.println("JAXB exception");
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			System.err.println("FileNotFound exception");
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.err.println("IOException");
+			e.printStackTrace();
+		}
+    	
 		
 	}
 
@@ -40,11 +63,11 @@ public class Front extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		ResourcesCatalogModel model = (ResourcesCatalogModel) this.getServletContext().getAttribute("model");
 		
 		String q = request.getParameter("q");
 		String login = request.getParameter("login");
-		Resource resource = (Resource)this.getServletContext().getAttribute("rsrc");
-		request.getSession().setAttribute("resource", resource);
+		
 		
 		RequestDispatcher rd;
 		//rd = request.getRequestDispatcher("/views/login.jspx");
